@@ -1,0 +1,9 @@
+<h2>{{ character.name.first }} {{ character.name.last }}</h2>
+<p>{{ character.name.first }}cm - {{ character.location.city }}</p>
+<img src="{{ character.picture.medium }}" alt="{{ character.name.first }}'s photo">
+<button *ngIf="!userFavouriteCharactersService.isCharacterFavourite(character)" (click)="addFavouriteCharacter(character)">
+  {{ 'Add favourite'}}
+</button>
+<button *ngIf="userFavouriteCharactersService.isCharacterFavourite(character)" (click)="removeFavouriteCharacter(character)">
+  {{ 'Remove favourite'}}
+</button>

@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { CardComponent } from './card/card.component';
 import { HomeComponent } from './home/home.component';
 import { InformacioComponent } from './informacio/informacio.component';
 import { InstalacionsComponent } from './instalacions/instalacions.component';
+import { UsersComponent } from './users/users.component';
 
 
 
@@ -21,7 +21,7 @@ export const routes: Routes = [
 },
 {
   path: 'usuaris',
-  component: CardComponent
+  component: UsersComponent
 }
 
 

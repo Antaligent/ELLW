@@ -1,0 +1,6 @@
+<p *ngIf="!charactersSearchResult?.results">Loading...</p>
+<ng-container *ngIf="charactersSearchResult?.results">
+  <app-character *ngFor="let character of charactersSearchResult?.results"
+    [character]="character"
+  />
+</ng-container>
