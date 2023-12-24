@@ -1,9 +1,10 @@
-<h2>{{ character.name.first }} {{ character.name.last }}</h2>
-<p>{{ character.name.first }}cm - {{ character.location.city }}</p>
-<img src="{{ character.picture.medium }}" alt="{{ character.name.first }}'s photo">
-<button *ngIf="!userFavouriteCharactersService.isCharacterFavourite(character)" (click)="addFavouriteCharacter(character)">
-  {{ 'Add favourite'}}
-</button>
-<button *ngIf="userFavouriteCharactersService.isCharacterFavourite(character)" (click)="removeFavouriteCharacter(character)">
-  {{ 'Remove favourite'}}
-</button>
+<div class="card" style="width: 18rem;">
+  <img [src]="character?.picture?.medium" class="card-img-top" alt="{{ character?.name?.first }}'s photo">
+  <div class="card-body">
+    <h5 class="card-title">{{ character?.name?.title }} {{ character?.name?.first }} {{ character?.name?.last }}</h5>
+    <p class="card-text">{{ character?.location?.city }}</p>
+    <p class="card-text">Phone: {{ character?.phone }}</p>
+    <p class="card-text">Email: {{ character?.email }}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>

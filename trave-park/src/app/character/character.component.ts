@@ -16,14 +16,6 @@ export class CharacterComponent {
   public userFavouriteCharactersService: UserFavouriteCharactersService = inject(UserFavouriteCharactersService);
 
   @Input() character!: Character;
-  removeFavouriteCharacter(character: Character) {
-    this.userFavouriteCharactersService.deleteCharacterFromFavourites(character);
-    console.log(this.userFavouriteCharactersService.getCurrentFavouriteCharacters());
-  }
 
-  addFavouriteCharacter(character: Character) {
-    this.userFavouriteCharactersService.addCharacterToFavourites(character);
-    console.log(this.userFavouriteCharactersService.getCurrentFavouriteCharacters());
-  }
 
 }

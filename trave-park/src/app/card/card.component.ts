@@ -9,5 +9,6 @@ import { RouterModule } from '@angular/router';
   styleUrl: './card.component.css'
 })
 export class CardComponent {
+user: any;
 
 }

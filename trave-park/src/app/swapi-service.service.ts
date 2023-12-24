@@ -9,7 +9,7 @@ export class SwapiService {
   constructor() { }
 
   async getCharacters(): Promise<CharacterSearchResult> {
-    const response = await fetch('https://randomuser.me/api/?results=35');
+    const response = await fetch('https://randomuser.me/api/?results=10');
     const charactersSearchResult: CharacterSearchResult = await response.json();
     return charactersSearchResult;
   }

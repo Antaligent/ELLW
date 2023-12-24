@@ -12,8 +12,9 @@ export interface Character {
     medium: string;
     thumbnail: string;
   };
+  phone?: string;
+  email?: string;
 }
-
 
 export interface CharacterSearchResult {
   count: number;
