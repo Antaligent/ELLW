@@ -1,8 +1,16 @@
-<div class="card" style="width: 18rem;">
-  <img [src]="user?.picture?.medium" class="card-img-top" alt="User Image">
-  <div class="card-body">
-    <h5 class="card-title">{{ user?.name.title }} {{ user?.name.first }} {{ user?.name.last }}</h5>
-    <p class="card-text">{{ user?.location.city }}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<section class="vh-100" style="background-color: #b3abab6d;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="width: 18rem;">
+          <img src="[user?.picture?.medium]" class="card-img-top" alt="User Image">
+          <div class="card-body">
+            <h5 class="card-title">{{ user?.name.title }} {{ user?.name.first }} {{ user?.name.last }}</h5>
+            <p class="card-text">{{ user?.location.city }}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>

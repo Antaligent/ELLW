@@ -1,0 +1,28 @@
+/* styles.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #000000;
+}
+
+.navbar-links,
+.navbar-login {
+  display: flex;
+}
+
+.navbar-login {
+  margin-left: auto;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-right: 10px;
+}

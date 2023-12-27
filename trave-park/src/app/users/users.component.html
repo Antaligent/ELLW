@@ -1,6 +1,16 @@
-<p *ngIf="!charactersSearchResult?.results">Loading...</p>
-<ng-container *ngIf="charactersSearchResult?.results">
-  <app-character *ngFor="let character of charactersSearchResult?.results"
-    [character]="character"
-  />
-</ng-container>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <p *ngIf="!charactersSearchResult?.results">Loading...</p>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="charactersSearchResult?.results">
+    <ng-container *ngFor="let character of charactersSearchResult?.results">
+      <div class="col-md-4 mb-4">
+        <!-- Ajusta el número de columnas y las clases según tus necesidades -->
+        <app-character [character]="character"></app-character>
+      </div>
+    </ng-container>
+  </div>
+</div>
