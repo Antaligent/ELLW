@@ -1,14 +1,23 @@
 <div class="container">
+  <!-- Explicación del negocio -->
+  <div class="row">
+    <div class="col">
+      <h2>Servei de Lloguer entre Usuaris</h2>
+      <p>El nostre servei exclusiu permet als usuaris nous conversar directament amb els usuaris actuals per alquilar les seves places de caravana, autocaravana o traster quan no estan en ús. Això no només optimitza l'ús de l'espai, sinó que també ofereix una solució flexible per a tots.</p>
+    </div>
+  </div>
+
+  <!-- Carga de personajes -->
   <div class="row">
     <div class="col">
       <p *ngIf="!charactersSearchResult?.results">Loading...</p>
     </div>
   </div>
 
+  <!-- Lista de personajes -->
   <div class="row" *ngIf="charactersSearchResult?.results">
     <ng-container *ngFor="let character of charactersSearchResult?.results">
       <div class="col-md-4 mb-4">
-        <!-- Ajusta el número de columnas y las clases según tus necesidades -->
         <app-character [character]="character"></app-character>
       </div>
     </ng-container>

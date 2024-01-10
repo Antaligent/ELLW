@@ -1,17 +1,16 @@
 <div class="card" style="width: 18rem;">
-  <img [src]="character?.picture?.medium" class="card-img-top" alt="{{ character?.name?.first }}'s photo">
+  <img src="{{ character.picture.medium }}" class="card-img-top" alt="{{ character.name.first }}'s photo">
 
   <div class="card-body">
     <div class="row">
       <div class="col-md-6">
-        <h5 class="card-title">{{ character?.name?.title }} {{ character?.name?.first }} {{ character?.name?.last }}</h5>
-        <p class="card-text">{{ character?.location?.city }}</p>
+        <h5 class="card-title">{{ character.name.title }} {{ character.name.first }} {{ character.name.last }}</h5>
+        <p class="card-text">Ciutat: {{ character.location.city }}</p>
       </div>
       <div class="col-md-6">
-        <p class="card-text">Phone: {{ character?.phone }}</p>
-        <p class="card-text">Email: {{ character?.email }}</p>
+        <p class="card-text">Telèfon: {{ character.phone }}</p>
+        <p class="card-text">Email: {{ character.email }}</p>
       </div>
     </div>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
