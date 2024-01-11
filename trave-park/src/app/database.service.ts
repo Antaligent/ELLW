@@ -8,8 +8,9 @@ export class DatabaseService {
 
   constructor(private httpClient: HttpClient) { }
 
-  async login(email: string, password: string) {
-    const data = await this.httpClient.post('http://localhost:3000/users/', { email }).toPromise();
-    return data;
+  async login(email: string) {
+    const response = await this.httpClient.get(`http://localhost:3000/users/${email}`).toPromise();
+    return response;
   }
+
 }
