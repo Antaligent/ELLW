@@ -12,11 +12,9 @@ import { DatabaseService } from '../database.service';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-
   formulario: FormGroup;
   dataBaseService = inject(DatabaseService);
   constructor() {
-
     this.formulario = new FormGroup({
       'email': new FormControl(),
       'password': new FormControl()
