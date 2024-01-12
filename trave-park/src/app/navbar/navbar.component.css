@@ -1,13 +1,16 @@
-/* styles.css */
+
 
 .navbar {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  background-color: #000000;
+  color:blue;
+  background-color: #ec0303;
 }
 
-.navbar-links,
+.navbar-links{
+  color: red;
+}
 .navbar-login {
   display: flex;
 }
@@ -25,4 +28,5 @@
 
 .nav-item {
   margin-right: 10px;
+  color: red;
 }

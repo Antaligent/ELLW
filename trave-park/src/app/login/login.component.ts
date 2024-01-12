@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router'; // Importa Router
+import { Router, RouterModule } from '@angular/router';
 import { DatabaseService } from '../database.service';
 
 @Component({
@@ -14,7 +14,8 @@ import { DatabaseService } from '../database.service';
 export class LoginComponent {
   formulario: FormGroup;
   dataBaseService = inject(DatabaseService);
-  router = inject(Router); // Inyecta Router utilizando la función inject
+  router = inject(Router);
+  mostrarMensaje = false;
 
   constructor() {
     this.formulario = new FormGroup({
@@ -25,17 +26,16 @@ export class LoginComponent {
 
   async onSubmit() {
     try {
-      const data = await this.dataBaseService.login(this.formulario.value.email); // Asegúrate de pasar la contraseña también
+      const data = await this.dataBaseService.login(this.formulario.value.email);
 
       if (data) {
-        // Si se devuelve un usuario, navega a la parte privada
         this.router.navigate(['/private']);
       } else {
-        // Manejo de credenciales incorrectas
+        this.mostrarMensaje = true;
       }
     } catch (error) {
-      // Manejo de errores de la solicitud
       console.error('Error durante el proceso de login:', error);
+
     }
   }
 }

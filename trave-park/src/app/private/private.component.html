@@ -1,35 +1,36 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="private.component.css">
-    <title>Sección Privada del Parking</title>
-</head>
+
 <body>
     <div class="container">
-        <h1>Área Privada de Gestión del Parking</h1>
+        <h2 class="area-privada">Àrea Privada</h2>
 
-        <section>
-            <h2>Contactos Clave</h2>
-            <table>
-                <tr>
-                    <th>Rol</th>
-                    <th>Nombre</th>
-                    <th>Teléfono</th>
-                </tr>
-                <tr>
-                    <td>Responsable</td>
-                    <td>Juan Pérez</td>
-                    <td>123-456-789</td>
-                </tr>
-                <tr>
-                    <td>Guardia de Seguridad</td>
-                    <td>Marta López</td>
-                    <td>987-654-321</td>
-                </tr>
-            </table>
-        </section>
+        <input type="checkbox" id="accordion-1">
+        <label for="accordion-1" class="accordion">Horari del Conserge</label>
+        <div class="panel">
+            <p>El nostre conserge està disponible per assistir-vos en les següents hores:</p>
+            <ul>
+                <li>Dilluns a Divendres: 08:00 - 20:00</li>
+                <li>Dissabtes: 10:00 - 18:00</li>
+                <li>Diumenges i Festius: Tancat</li>
+            </ul>
+            <p>Si tens qualssevol tipus d'incidència o dubte pots trucar o enviar un missatge a: 644415801</p>
+        </div>
+
+        <input type="checkbox" id="accordion-2">
+        <label for="accordion-2" class="accordion">Seguretat i Accés</label>
+        <div class="panel">
+            <p>Per a garantir la seguretat de les vostres propietats, hem implementat un sistema d'alarma i accés controlat.</p>
+            <h3>Pins de les Alarmes</h3>
+            <p>Cada client rebrà un codi PIN únic per a desactivar l'alarma de la seva zona d'emmagatzematge.</p>
+            <h3>Pins de les Portes d'Entrada</h3>
+            <p>L'accés als recintes es realitza a través d'un sistema de PIN.</p>
+        </div>
+
+        <input type="checkbox" id="accordion-3">
+        <label for="accordion-3" class="accordion">Requisits per a l'Accés</label>
+        <div class="panel">
+            <p>És obligatori fitxar cada cop que s'entra al recinte. Utilitza la clau indicada per a registrar la teva entrada i sortida.</p>
+        </div>
     </div>
 </body>
-</html>
+
+

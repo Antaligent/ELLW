@@ -1,43 +1,64 @@
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f8f9fa;
-  color: #343a40;
   margin: 0;
   padding: 0;
+  background-color: #007bff;
+}
+.section-title{
+  background-color: #007bff;
+  color: white;
+  padding: 1em 0;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.facilities-section {
+.instalaciones-section {
+  background-color: #ffffff;
   text-align: center;
   padding: 50px 0;
 }
 
-.facility-card {
-  max-width: 400px;
-  margin: 20px;
-  border: 1px solid #dee2e6;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-.facility-card:hover {
-  transform: scale(1.05);
-}
-
-.facility-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.facility-info {
+.service-item {
+  width: 300px;
+  margin: 10px;
   padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-h3 {
-  color: #007bff;
+.service-item h3 {
+  color: #ff6219;
 }
 
-p {
-  font-size: 16px;
+.service-item p {
+  font-size: 14px;
+}
+
+
+.service-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 1em 0;
+  text-align: center;
+}
+.instalaciones-section {
+  background-image: url('/assets/Autocaravanes.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }

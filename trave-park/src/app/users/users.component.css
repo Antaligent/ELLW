@@ -1,0 +1,22 @@
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 1em 0;
+  text-align: center;
+  margin-bottom: 100px;
+
+}
+.col h4 {
+  margin-bottom: 100px;
+  text-align: center;
+}
+.vh-100 {
+  background-image: url('/assets/Autocaravanes.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body {
+  background-color: gray;
+
+}

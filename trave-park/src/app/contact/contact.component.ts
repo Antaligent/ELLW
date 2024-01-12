@@ -9,5 +9,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent {
+enviarCorreu() {
+throw new Error('Method not implemented.');
+}
 
 }
