@@ -1,16 +1,35 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
-  standalone: true,
-  imports: [RouterModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.css'
+  styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
-enviarCorreu() {
-throw new Error('Method not implemented.');
-}
+  constructor(private httpClient: HttpClient) {}
 
+  enviarCorreu() {
+    const email = 'correo@example.com'; // Reemplaza con el valor real del campo de correo electrónico
+    const content = 'Contenido del mensaje'; // Reemplaza con el valor real del campo de contenido
+
+    const user = {
+      email: email,
+      content: content
+    };
+
+    const url = 'http://localhost:3000/issue/post'; // URL de tu servidor
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    this.httpClient.post(url, user, { headers })
+      .toPromise()
+      .then(response => {
+        // Manejar la respuesta aquí
+        console.log(response);
+      })
+      .catch(error => {
+        // Manejar el error aquí
+        console.error(error);
+      });
+  }
 }

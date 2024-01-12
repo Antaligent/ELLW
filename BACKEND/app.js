@@ -9,7 +9,7 @@ async function main() {
   await connect();
   
   app.use('/users', usersRouter);
-  app.use('/queque', quequeRouter)
+  app.use('/issue', quequeRouter)
   
   app.listen(PORT, () => {
     console.log(`Example app listening on port ${PORT}`);
