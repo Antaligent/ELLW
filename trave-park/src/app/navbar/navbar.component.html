@@ -1,10 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="">
-      <img src="/assets/Logo.png" width="30" height="30" routerLink="/" class="d-inline-block align-top" alt="">
-      TRAVÉ PARK
-    </a>
-  </nav>
+  <a class="navbar-brand" href="">
+    <img src="/assets/Logo.png" width="30" height="30" routerLink="/" class="d-inline-block align-top" alt="">
+    TRAVÉ PARK
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -17,17 +15,20 @@
       <li class="nav-item active">
         <a class="nav-link" routerLink="/instalacions">Instalacions</a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/usuaris">Usuaris</a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/contact">Contacte</a>
       </li>
-      <li class="nav-item">
+      <!-- Enlace de Login, visible solo si el usuario no ha iniciado sesión -->
+      <li class="nav-item" *ngIf="!authService.isLoggedIn">
         <a class="nav-link" routerLink="/login">Login</a>
       </li>
+      <!-- Enlaces para usuarios ADMIN -->
+      <li class="nav-item" *ngIf="authService.isLoggedIn && authService.userRole === 'ADMIN'">
+        <a class="nav-link" routerLink="/admin">Admin</a>
+      </li>
+      <li class="nav-item" *ngIf="authService.isLoggedIn && authService.userRole === 'ADMIN'">
+        <a class="nav-link" routerLink="/payments">Payments</a>
+      </li>
     </ul>
-
   </div>
-
 </nav>

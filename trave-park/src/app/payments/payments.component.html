@@ -1,0 +1,22 @@
+<!-- payments.component.html -->
+
+<div class="button-group">
+  <button *ngFor="let month of months" (click)="loadPayments(month)">
+    {{ month }}
+  </button>
+</div>
+
+<div *ngIf="selectedPayments.length > 0">
+  <!-- Aquí se mostrarán los pagos del mes seleccionado -->
+  <div *ngFor="let payment of selectedPayments" class="card mb-3">
+    <div class="card-body">
+      <!-- Muestra la información de cada pago aquí -->
+      <h5 class="card-title">Pago #{{ payment.id }}</h5>
+      <p class="card-text">Usuario: {{ payment.userId }}</p>
+      <p class="card-text">Cantidad: {{ payment.amount }}</p>
+      <p class="card-text">Fecha: {{ payment.date | date: 'mediumDate' }}</p>
+      <p class="card-text">Pagado: {{ payment.isPaid ? 'Sí' : 'No' }}</p>
+    </div>
+  </div>
+</div>
+

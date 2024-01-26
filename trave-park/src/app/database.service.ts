@@ -8,9 +8,14 @@ export class DatabaseService {
 
   constructor(private httpClient: HttpClient) { }
 
-  async login(email: string) {
-    const response = await this.httpClient.get(`http://localhost:3000/users/${email}`).toPromise();
+  async login(email: string, password: string) {
+    const response = await this.httpClient.post<any>(`http://localhost:3000/users/login`, { email, password }).toPromise();
+    if (response && response.token) {
+      localStorage.setItem('authToken', response.token);
+      localStorage.setItem('userRole', response.role); // Almacena el rol del usuario
+    }
     return response;
   }
+
 
 }

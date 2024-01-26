@@ -6,14 +6,8 @@
           <div class="row g-0">
 
 
-            <div class="col-md-6 col-lg-5 d-none d-md-block">
-              <img src="/assets/login.jpeg" alt="Instal·lacions Destacades" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
-            </div>
-
-
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
-
 
                 <div class="d-flex align-items-center mb-3 pb-1">
                   <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -24,21 +18,29 @@
                   Accedeix a l'àrea privada per a resoldre dubtes
                 </p>
 
-
                 <h3 class="fw-bold mb-3 pb-3">Inicia Sessió</h3>
                 <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="mb-3">
                   <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" formControlName="email" required>
+                    <input type="email" id="email" formControlName="email" required class="form-control" autocomplete="email">
+
                   </div>
                   <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" formControlName="password" required>
+                    <input type="password" id="password" formControlName="password" required class="form-control" autocomplete="current-password">
+
                   </div>
                   <button type="submit" class="btn btn-primary">Accedeix</button>
+                  <div *ngIf="mensajeError" class="error-message">
+                    {{ mensajeError }}
+                  </div>
+
                 </form>
 
-
+                <!-- Enlace para recuperar contraseña -->
+                <p class="mt-3">
+                  <a href="/forgot-password">¿Has oblidat la teva contrasenya?</a>
+                </p>
 
               </div>
             </div>
@@ -48,4 +50,3 @@
     </div>
   </div>
 </section>
-

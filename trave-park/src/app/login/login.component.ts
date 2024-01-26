@@ -1,17 +1,18 @@
-import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DatabaseService } from '../database.service';
 
 @Component({
   selector: 'app-login',
+  imports: [ReactiveFormsModule,CommonModule], // Asegúrate de incluir ReactiveFormsModule aquí
   standalone: true,
-  imports: [RouterModule, ReactiveFormsModule, HttpClientModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  mensajeError: string = '';
   formulario: FormGroup;
   dataBaseService = inject(DatabaseService);
   router = inject(Router);
@@ -19,23 +20,33 @@ export class LoginComponent {
 
   constructor() {
     this.formulario = new FormGroup({
-      'email': new FormControl(),
-      'password': new FormControl()
+      'email': new FormControl('', [Validators.required, Validators.email]),
+      'password': new FormControl('', [Validators.required])
     });
   }
 
   async onSubmit() {
-    try {
-      const data = await this.dataBaseService.login(this.formulario.value.email);
+    if (this.formulario.valid) {
+      try {
+        const response = await this.dataBaseService.login(this.formulario.value.email, this.formulario.value.password);
+        if (response && response.token) {
+          const userRole = localStorage.getItem('userRole');
+          if (userRole === 'ADMIN') {
+            this.router.navigate(['/admin']);
+            localStorage.setItem('userRole', response.role);
 
-      if (data) {
-        this.router.navigate(['/private']);
-      } else {
+          } else {
+            this.router.navigate(['/private']);
+          }
+        } else {
+          this.mostrarMensaje = true;
+        }
+      } catch (error) {
+        console.error('Error durante el proceso de login:', error);
         this.mostrarMensaje = true;
       }
-    } catch (error) {
-      console.error('Error durante el proceso de login:', error);
-
     }
   }
+
+
 }

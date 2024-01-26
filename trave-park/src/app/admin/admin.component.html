@@ -1,0 +1,15 @@
+<section>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let user of users">
+      <div class="card user-card">
+        <div class="card-body">
+          <h5 class="card-title">{{ user.username }}</h5>
+          <p class="card-text">Email: {{ user.email }}</p>
+          <p class="card-text">Parcela: {{ user.parcela }}</p>
+          <p class="card-text">DNI: {{ user.dni }}</p>
+          <p class="card-text">Phone: {{ user.phone }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
