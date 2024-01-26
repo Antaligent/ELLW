@@ -13,7 +13,7 @@ import { AuthService } from '../auth.service';
 export class NavbarComponent {
   logout() {
 
-    localStorage.removeItem('token');
+    localStorage.removeItem('authToken');
     localStorage.removeItem('userRole');
   }
   constructor(public authService: AuthService) {}

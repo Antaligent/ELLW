@@ -42,10 +42,8 @@ export class CreatePaymentComponent implements OnInit {
   onSubmit(): void {
     if (this.paymentForm.valid) {
       const formData = this.paymentForm.value;
-      console.log('Formulario válido', formData);
       this.paymentService.addPayment(formData).subscribe(
         response => {
-          console.log('Pago creado con éxito:', response);
           this.paymentForm.reset();
         },
         error => {
