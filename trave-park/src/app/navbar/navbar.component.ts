@@ -11,5 +11,10 @@ import { AuthService } from '../auth.service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+  logout() {
+
+    localStorage.removeItem('token');
+    localStorage.removeItem('userRole');
+  }
   constructor(public authService: AuthService) {}
 }

@@ -7,14 +7,17 @@ import { Payment } from './Entities/payment.models';
   providedIn: 'root'
 })
 export class PaymentService {
-  private apiUrl = 'http://localhost:3000/payment'; // Ajusta a tu URL de API
+  private apiUrl = 'http://localhost:3000/payment';
 
   constructor(private http: HttpClient) {}
 
   getPaymentsByMonth(month: number): Observable<any> {
     const params = new HttpParams().set('month', month.toString());
     return this.http.get<Payment[]>(`${this.apiUrl}/month`, { params });
-}
+  }
+  addPayment(payment: Payment): Observable<Payment> {
+    return this.http.post<Payment>(this.apiUrl, payment);
+  }
 
 
 }

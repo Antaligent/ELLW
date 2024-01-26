@@ -6,7 +6,7 @@ const PaymentController = {
       const newPayment = await PaymentSchema.createPayment(req.body);
       res.status(201).json(newPayment);
     } catch (error) {
-      res.status(500).json({ message: 'Error al crear el pago', error: error.message });
+      res.status(500).json({ message: 'Error al crear el pagooooo', error: error.message });
     }
   },
 

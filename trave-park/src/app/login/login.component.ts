@@ -34,9 +34,11 @@ export class LoginComponent {
           if (userRole === 'ADMIN') {
             this.router.navigate(['/admin']);
             localStorage.setItem('userRole', response.role);
+            this.formulario.reset();
 
           } else {
             this.router.navigate(['/private']);
+            this.formulario.reset();
           }
         } else {
           this.mostrarMensaje = true;

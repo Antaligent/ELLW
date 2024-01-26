@@ -1,0 +1,54 @@
+<section class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-header">
+          <h3 class="card-title">Crear Nou Rebut</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="userId">Usuari:</label>
+              <select class="form-control" id="userId" formControlName="userId">
+                <option value="">Selecciona un usuario</option>
+                <option *ngFor="let user of users" [value]="user._id">{{ user.email }}</option>
+              </select>
+
+            </div>
+            <div class="form-group">
+              <label for="amount">Import:</label>
+              <input type="number" class="form-control" id="amount" formControlName="amount" placeholder="Ingresa la quantitat">
+            </div>
+            <div class="form-group">
+              <label for="date">Data:</label>
+              <input type="date" class="form-control" id="date" formControlName="date">
+            </div>
+            <div class="form-group">
+              <label for="month">Mes:</label>
+              <select class="form-control" id="month" formControlName="month">
+                <option value="">Selecciona un mes</option>
+                <option value="1">Gener</option>
+                <option value="2">Febrer</option>
+                <option value="3">Març</option>
+                <option value="4">Abril</option>
+                <option value="5">Maig</option>
+                <option value="6">Juny</option>
+                <option value="7">Juliol</option>
+                <option value="8">Agost</option>
+                <option value="9">Setembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Novembre</option>
+                <option value="12">Desembre</option>
+              </select>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="isPaid" formControlName="isPaid">
+              <label class="form-check-label" for="isPaid">Pagat</label>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Crear Rebut</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

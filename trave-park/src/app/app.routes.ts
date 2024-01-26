@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './auth.guard';
 import { ContactComponent } from './contact/contact.component';
+import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
+import { CreatePaymentComponent } from './create-payment/create-payment.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HomeComponent } from './home/home.component';
 import { InformacioComponent } from './informacio/informacio.component';
@@ -50,6 +52,16 @@ canActivate: [AuthGuard]
 {
   path: 'payments',
   component: PaymentsComponent,
+  canActivate: [AuthGuard]
+},
+{
+  path: 'create-user',
+  component: CrearUsuarioComponent,
+  canActivate: [AuthGuard]
+},
+{
+  path: 'create-payment',
+  component: CreatePaymentComponent,
   canActivate: [AuthGuard]
 }
 

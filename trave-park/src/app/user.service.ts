@@ -13,4 +13,8 @@ export class UserService {
   getUsers(): Observable<any> {
     return this.http.get(this.apiUrl);
   }
+  addUser(userData: any) {
+    return this.http.post(`${this.apiUrl}/register`, userData);
+  }
+
 }
